@@ -23,22 +23,32 @@ Partial Class BooksTableForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.LoadDataButton = New System.Windows.Forms.Button()
+        Me.BooksTextField = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'LoadDataButton
         '
-        Me.LoadDataButton.Location = New System.Drawing.Point(368, 270)
+        Me.LoadDataButton.Location = New System.Drawing.Point(364, 317)
         Me.LoadDataButton.Name = "LoadDataButton"
         Me.LoadDataButton.Size = New System.Drawing.Size(75, 23)
         Me.LoadDataButton.TabIndex = 0
         Me.LoadDataButton.Text = "Load Data"
         Me.LoadDataButton.UseVisualStyleBackColor = True
         '
+        'BooksTextField
+        '
+        Me.BooksTextField.Location = New System.Drawing.Point(37, 27)
+        Me.BooksTextField.Name = "BooksTextField"
+        Me.BooksTextField.Size = New System.Drawing.Size(723, 224)
+        Me.BooksTextField.TabIndex = 1
+        Me.BooksTextField.Text = ""
+        '
         'BooksTableForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.BooksTextField)
         Me.Controls.Add(Me.LoadDataButton)
         Me.Name = "BooksTableForm"
         Me.Text = "Books Table"
@@ -47,4 +57,5 @@ Partial Class BooksTableForm
     End Sub
 
     Friend WithEvents LoadDataButton As Button
+    Friend WithEvents BooksTextField As RichTextBox
 End Class

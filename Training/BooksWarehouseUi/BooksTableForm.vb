@@ -14,7 +14,8 @@ Public Class BooksTableForm
         Try
             REM task = Await hc.GetFromJsonAsync(Of Task(Of List(Of Book)))("http://h2908727.stratoserver.net:8080/api/books")
             books = Await hc.GetFromJsonAsync(Of List(Of Book))("http://localhost:5000/api/Books")
-            books.ForEach(Sub(element) Debug.WriteLine(element))
+            BooksTextField.Clear()
+            books.ForEach(Sub(element) BooksTextField.AppendText(element.ToString()))
 
         Catch ex As Exception
         End Try
