@@ -3,7 +3,7 @@ using BooksWarehouse.Api.Types;
 
 namespace BooksWarehouse.Api
 {
-    interface BooksModel
+    public interface BooksModel
     {
         string Create(string title);
         Book FindByIsbn(string isbn);
