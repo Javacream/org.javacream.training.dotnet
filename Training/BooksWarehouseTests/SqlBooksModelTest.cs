@@ -34,5 +34,25 @@ namespace BooksWarehouseTests
             }
 
         }
+        [Fact]
+        public void testStratoDb()
+        {
+            DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
+            var connection = sqlFactory.CreateConnection();
+            connection.ConnectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=sa;Password=admin123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            connection.Open();
+            System.Console.WriteLine(connection.Database);
+            DbCommand command = sqlFactory.CreateCommand();
+            command.Connection = connection;
+            command.CommandText = "select * from messages";
+            var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                _testOutputHelper.WriteLine(reader["message"].ToString());
+            }
+
+        }
+
+
     }
 }
