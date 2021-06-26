@@ -8,7 +8,7 @@ namespace BooksWarehouse.Api
 {
     public class Book
     {
-        public string Isbn { get;}
+        public string Isbn { get; set; }
         public string Title { get; set; }
         public int Pages{ get; set; }
         public double Price { get; set; }

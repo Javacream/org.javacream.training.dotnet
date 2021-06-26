@@ -33,7 +33,7 @@ namespace BooksWebServices
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BooksWebServices", Version = "v1" });
             });
-            services.AddSingleton<BooksModel>(new MapBooksModel());
+            services.AddSingleton<BooksModel>(new SqlBooksModel());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
