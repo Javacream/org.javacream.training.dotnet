@@ -16,7 +16,7 @@ namespace BooksWarehouseTests
             _testOutputHelper = testOutputHelper;
         }
 
-        [Fact]
+        //[Fact]
         public void testDb()
         {
             DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;

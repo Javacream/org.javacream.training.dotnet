@@ -10,7 +10,7 @@ namespace BooksWarehouse.Impl
 {
     public class SqlBooksModel : BooksModel
     {
-
+        private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=sa;Password=admin123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
 
 
@@ -25,7 +25,7 @@ namespace BooksWarehouse.Impl
             string isbn = "ISBN" + random.Next();
             using (var connection = sqlFactory.CreateConnection())
             {
-                connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Publishing;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
@@ -41,7 +41,7 @@ namespace BooksWarehouse.Impl
         {
             using (var connection = sqlFactory.CreateConnection())
             {
-                connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Publishing;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
@@ -55,7 +55,7 @@ namespace BooksWarehouse.Impl
         {
             using (var connection = sqlFactory.CreateConnection())
             {
-                connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Publishing;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
@@ -74,7 +74,7 @@ namespace BooksWarehouse.Impl
         {
             using (var connection = sqlFactory.CreateConnection())
             {
-                connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Publishing;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
@@ -90,7 +90,7 @@ namespace BooksWarehouse.Impl
         {
             using (var connection = sqlFactory.CreateConnection())
             {
-                connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Publishing;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
