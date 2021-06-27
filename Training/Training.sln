@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksWarehouseTests", "Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksWebServices", "BooksWebServices\BooksWebServices.csproj", "{F5E65E75-0742-4CF4-ABA4-C74FB5D217C3}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BooksWarehouseUi", "BooksWarehouseUi\BooksWarehouseUi.vbproj", "{96B0EFC7-17D5-44AB-A044-D84D633FCCF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_csharp", "Learning_csharp\Learning_csharp.csproj", "{54CD4384-D1D1-4FAF-9C03-BB363AE659E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{F5E65E75-0742-4CF4-ABA4-C74FB5D217C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E65E75-0742-4CF4-ABA4-C74FB5D217C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E65E75-0742-4CF4-ABA4-C74FB5D217C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96B0EFC7-17D5-44AB-A044-D84D633FCCF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96B0EFC7-17D5-44AB-A044-D84D633FCCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96B0EFC7-17D5-44AB-A044-D84D633FCCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96B0EFC7-17D5-44AB-A044-D84D633FCCF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CD4384-D1D1-4FAF-9C03-BB363AE659E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CD4384-D1D1-4FAF-9C03-BB363AE659E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CD4384-D1D1-4FAF-9C03-BB363AE659E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CD4384-D1D1-4FAF-9C03-BB363AE659E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
