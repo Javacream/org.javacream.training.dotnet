@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using BooksWarehouse.Api.Types;
+using System.Collections.Generic;
 
-namespace BooksWarehouse.Api
+namespace Javacream.BooksWarehouse.Api
 {
     public interface BooksModel
     {
@@ -10,5 +9,10 @@ namespace BooksWarehouse.Api
         List<Book> FindAll();
         void DeleteByIsbn(string isbn);
         void Update(Book book);
+        List<string> FindAllIsbns();
+        Book FindByTitle(string title);
+        List<Book> FindByPriceRange(double min, double max);
+
     }
+
 }
