@@ -12,8 +12,8 @@ Public Class BooksTableForm
         Dim books As List(Of Book)
         hc = New HttpClient
         Try
-            REM task = Await hc.GetFromJsonAsync(Of Task(Of List(Of Book)))("http://h2908727.stratoserver.net:8080/api/books")
-            books = Await hc.GetFromJsonAsync(Of List(Of Book))("http://localhost:5000/api/Books")
+            REM books = Await hc.GetFromJsonAsync(Of List(Of Book))("http://localhost:5000/api/Books")
+            books = Await hc.GetFromJsonAsync(Of List(Of Book))("http://h2908727.stratoserver.net:8080/api/books")
             BooksTextField.Clear()
             books.ForEach(Sub(element) BooksTextField.AppendText(element.ToString()))
 
