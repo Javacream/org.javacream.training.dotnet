@@ -10,6 +10,8 @@ namespace Javacream.BooksWarehouse.Api
         void DeleteByIsbn(string isbn);
         void Update(Book book);
         List<string> FindAllIsbns();
+        Book FindByTitle(string title);
+        List<Book> FindByPriceRange(double min, double max);
 
     }
 
