@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>BooksWarehouse</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Rainer Sawitzki</Authors>
+    <Company>Javacream</Company>
+
   </PropertyGroup>
 
   <ItemGroup>
