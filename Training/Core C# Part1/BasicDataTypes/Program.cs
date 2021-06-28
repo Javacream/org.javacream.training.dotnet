@@ -3,7 +3,7 @@ using System.Numerics;
 
 Console.WriteLine("***** Fun with Basic Data Types *****\n");
 LocalVarDeclarations();
-DefaultDeclarations();
+/*DefaultDeclarations();
 NewingDataTypes();
 NewingDataTypesWith9();
 ObjectFunctionality();
@@ -15,11 +15,11 @@ UseDatesAndTimes();
 UseBigInteger();
 DigitSeparators();
 BinaryLiterals();
-Console.ReadLine();
+Console.ReadLine();*/
 
 static void LocalVarDeclarations()
 {
-    Console.WriteLine("=> Data Declarations:");
+    Console.WriteLine("=> Variable Declarations:");
     // Local variables are declared and initialized as follows:
     // dataType varName = initialValue;
     int myInt = 0;
