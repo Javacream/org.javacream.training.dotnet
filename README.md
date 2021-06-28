@@ -1,6 +1,20 @@
 # org.javacream.training.dotnet
 
-## remote
+## Organisatorisches
 
-docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P admin123!
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=admin123!' -p 1433:1433 --name mssql -d mcr.microsoft.com/mssql/server
+* Referent: Rainer Sawitzki, eMail: training@rainer-sawitzki.de
+
+* Seminarzeiten
+  * 8 Unterrichtseinheiten mit jeweils 90 Minuten
+  * 9:00 - 16:15
+    * Mittagspause 45’ (12:15-13:00)
+    * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
+  * 
+## Durchführung des Seminars
+
+* Beispiele
+  * https://github.com/Javacream/org.javacream.training.dotnet
+    * Branch Vector_28.6.2021
+
+* Digitales Flipchart
+  * https://docs.google.com/presentation/d/11JidcCUOSbJd2_hP9YEEdI7huscgHvUdKfnjA2f6NG0/edit?usp=sharing
