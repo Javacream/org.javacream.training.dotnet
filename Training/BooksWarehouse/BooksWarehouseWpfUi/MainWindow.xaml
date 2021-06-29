@@ -1,0 +1,14 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BooksWarehouseWpfUi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button" Content="Load Data" HorizontalAlignment="Left" Height="82" Margin="325,301,0,0" VerticalAlignment="Top" Width="211" Cursor="SizeNWSE"/>
+        <TextBlock x:Name="booksTextBlock" HorizontalAlignment="Left" Height="232" Margin="55,21,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="696"/>
+
+    </Grid>
+</Window>
