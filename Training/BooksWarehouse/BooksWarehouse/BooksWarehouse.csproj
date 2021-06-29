@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>BooksWarehouse</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>Rainer Sawitzki</Authors>
     <Company>Javacream</Company>
   </PropertyGroup>
