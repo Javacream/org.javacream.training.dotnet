@@ -10,7 +10,7 @@ namespace Javacream.Training.Ef
 
                 var p = new Person()
                 {
-                     Name = "Bill"
+                     Name = "Emil"
                 };
 
                 context.People.Add(p);
