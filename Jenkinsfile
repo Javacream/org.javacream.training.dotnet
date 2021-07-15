@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Egal') {
+    stage('Number1') {
       steps {
-        withMaven(maven: 'Maven')
+        sh 'echo \'Hello\''
       }
     }
 
