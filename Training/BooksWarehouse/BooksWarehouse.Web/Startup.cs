@@ -13,8 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Javacream.BooksWarehouse.Api;
 using Javacream.BooksWarehouse.Impl;
-using BooksWarehouse.Impl;
-namespace BooksWarehouse.Web
+namespace Javacream.BooksWarehouse.Web
 {
     public class Startup
     {

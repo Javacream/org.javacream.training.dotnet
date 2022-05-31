@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksWarehouse", "BooksWare
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksWarehouse.Test", "BooksWarehouse.Test\BooksWarehouse.Test.csproj", "{7DD91D5F-EBEA-4E89-A6AE-61D9BCE38A79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksWarehouse.Web", "BooksWarehouse.Web\BooksWarehouse.Web.csproj", "{78343CB8-963D-4BE8-B88C-7112C2AA78B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{7DD91D5F-EBEA-4E89-A6AE-61D9BCE38A79}.Release|x64.Build.0 = Release|Any CPU
 		{7DD91D5F-EBEA-4E89-A6AE-61D9BCE38A79}.Release|x86.ActiveCfg = Release|Any CPU
 		{7DD91D5F-EBEA-4E89-A6AE-61D9BCE38A79}.Release|x86.Build.0 = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|x64.Build.0 = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{78343CB8-963D-4BE8-B88C-7112C2AA78B5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -8,7 +8,7 @@ namespace Javacream.BooksWarehouse.Impl
 {
     public class SqlBooksModel : BooksModel
     {
-        private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=sa;Password=admin123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=sa;Password=javacream123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
 
 
@@ -67,6 +67,42 @@ namespace Javacream.BooksWarehouse.Impl
                 return result;
             }
         }
+        public Book FindByTitle(string title)
+        {
+            using (var connection = sqlFactory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select * from books where title = @title";
+                command.Parameters.Add(new SqlParameter("@title", title));
+                var reader = command.ExecuteReader();
+                reader.Read();
+                return new Book((string)reader["isbn"], (string)reader["title"], (int)reader["pages"], (double)reader["price"], false);
+            }
+        }
+        public List<Book> FindByPriceRange(double min, double max)
+        {
+            using (var connection = sqlFactory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select * from books where price > = @min and price < @max";
+                command.Parameters.Add(new SqlParameter("@min", min));
+                command.Parameters.Add(new SqlParameter("@max", max));
+                var reader = command.ExecuteReader();
+                List<Book> result = new List<Book>();
+                while (reader.Read())
+                {
+                    result.Add(new Book((string)reader["isbn"], (string)reader["title"], (int)reader["pages"], (double)reader["price"],  false));
+                }
+                return result;
+            }
+
+        }
 
         public Book FindByIsbn(string isbn)
         {
@@ -101,5 +137,22 @@ namespace Javacream.BooksWarehouse.Impl
             }
 
         }
+        public List<string> FindAllIsbns(){
+             using (var connection = sqlFactory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = sqlFactory.CreateCommand();
+                command.Connection = connection;
+                command.CommandText = "select isbn from books";
+                var reader = command.ExecuteReader();
+                List<string> result = new List<string>();
+                while (reader.Read())
+                {
+                    result.Add((string)reader["isbn"]);
+                }
+                return result;
+           }
+       }
     }
 }

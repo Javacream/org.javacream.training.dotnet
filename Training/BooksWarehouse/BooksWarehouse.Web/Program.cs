@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BooksWarehouse.Web
+namespace Javacream.BooksWarehouse.Web
 {
     public class Program
     {
