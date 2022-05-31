@@ -1,0 +1,1 @@
+create table BOOKS (isbn varchar(50), title varchar(256), price float, pages integer, available bit, primary key (isbn))
