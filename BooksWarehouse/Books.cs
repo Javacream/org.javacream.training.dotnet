@@ -13,6 +13,6 @@ namespace Javacream.BooksWarehouse{
             Pages = pages;
             Price = price;
             Available = available;
-    }
+         }
     }
 }
