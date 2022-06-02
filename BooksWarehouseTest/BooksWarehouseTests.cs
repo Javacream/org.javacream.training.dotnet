@@ -12,14 +12,14 @@ namespace Javacream.BooksWarehouse.Test
         }
 
         [Test]
-        public void PlayAroundWithObjects(){
+        public void PlayAroundWithClassObjects(){
             //b1 ist eine Referenz auf ein Objekt
             Book b1 = new Book("ISBN1", "Title1", 100, 19.99, true);
-            DoSomethingWithReference(b1);
+            PlayWithReference(b1);
             Assert.AreEqual(101, b1.Pages);
-            DoSomethingWithNewInternalBook(b1);
+            PlayWithNewInternalBook(b1);
             Assert.AreEqual(101, b1.Pages);
-            DoSomethingWithNewInternalBookAndRef(ref b1);
+            PlayWithNewInternalBookAndRef(ref b1);
             Assert.AreEqual(103, b1.Pages);
             Book b2 = b1;
             b2.Pages = 104;
@@ -36,6 +36,22 @@ namespace Javacream.BooksWarehouse.Test
         }
         private void PlayWithNewInternalBookAndRef(ref Book b){
             b = new Book("ISBN1", "Title1", 103, 19.99, true);
+        }
+
+        [Test]
+        public void PlayAroundWithStrucObjects(){
+            //b1 ist eine Referenz auf ein Objekt
+            BookStruct b1 = new BookStruct("ISBN1", "Title1", 100, 19.99, true);
+            PlayWithStruct(b1);
+            Assert.AreEqual(100, b1.Pages);
+            BookStruct b2 = b1;
+            b2.Pages = 104;
+            Assert.AreEqual(100, b1.Pages);
+
+
+        }
+        private void PlayWithStruct(BookStruct b){
+            b.Pages = 101;
         }
 
 
