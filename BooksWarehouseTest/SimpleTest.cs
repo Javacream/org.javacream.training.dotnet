@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace BooksWarehouse.Test
+namespace Javacream.BooksWarehouse.Test
 {
     public class Tests
     {

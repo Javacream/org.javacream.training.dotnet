@@ -6,8 +6,12 @@ namespace BooksWarehouse.Application
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting Books Application...");
-            Console.WriteLine("Books Application finished");
+            string startMessage = "Starting Books Application...";
+            var endMessage = "Books Application finished";
+            //startMessage = 42; -> Compiler-Fehler
+            //endMessage = 42; -> Compiler-Fehler, var bedeutet nicht "Irgendwas"
+            Console.WriteLine(startMessage);
+            Console.WriteLine(endMessage);
         }
     }
 }
