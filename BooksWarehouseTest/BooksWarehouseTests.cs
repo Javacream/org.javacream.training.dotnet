@@ -12,6 +12,15 @@ namespace Javacream.BooksWarehouse.Test
         }
 
         [Test]
+        public void PlayAroundWithTypeInference(){
+            Book b1 = new Book("ISBN1", "Title1", 100, 19.99, true);
+            var b2 = new Book("ISBN1", "Title1", 100, 19.99, true);
+            Book b3 = new ("ISBN1", "Title1", 100, 19.99, true);
+
+        }
+
+
+        [Test]
         public void PlayAroundWithClassObjects(){
             //b1 ist eine Referenz auf ein Objekt
             Book b1 = new Book("ISBN1", "Title1", 100, 19.99, true);
