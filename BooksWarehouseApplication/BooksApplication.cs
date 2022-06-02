@@ -6,7 +6,8 @@ namespace BooksWarehouse.Application
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Starting Books Application...");
+            Console.WriteLine("Books Application finished");
         }
     }
 }
