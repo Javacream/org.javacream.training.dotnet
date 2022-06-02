@@ -28,13 +28,13 @@ namespace Javacream.BooksWarehouse.Test
 
         }
 
-        private void DoSomethingWithReference(Book b){
+        private void PlayWithReference(Book b){
             b.Pages = 101;
         }
-        private void DoSomethingWithNewInternalBook(Book b){
+        private void PlayWithNewInternalBook(Book b){
             b = new Book("ISBN1", "Title1", 102, 19.99, true);
         }
-        private void DoSomethingWithNewInternalBookAndRef(ref Book b){
+        private void PlayWithNewInternalBookAndRef(ref Book b){
             b = new Book("ISBN1", "Title1", 103, 19.99, true);
         }
 
