@@ -58,7 +58,7 @@ namespace Javacream.BooksWarehouse.Test
         [Test]
         public void PlayAroundWithStrucObjects(){
             //type <name> = Literal
-            string message = "Hello";
+            //string message = "Hello";
             Action<BookStruct> playWithStruct = (BookStruct b) => {
                 b.Pages = 101;
             };
