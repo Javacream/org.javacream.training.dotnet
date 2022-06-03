@@ -15,10 +15,26 @@ namespace Javacream.BooksWarehouse.Test
 
         [Test]
         public void BooksModelWorks(){
+            string title = "TEST";
             IBooksModel model = ApplicationContext.Model;
-            string generatedIsbn = model.Create("TEST");
+            string generatedIsbn = model.Create(title);
+            Assert.NotNull(generatedIsbn);
             Book searchResult = model.FindByIsbn(generatedIsbn);
-            //...
+            Assert.AreEqual(title, searchResult.Title);
+            Assert.AreEqual(generatedIsbn, searchResult.Isbn);
+        }
+        [Test]
+        public void FindBookByIsbnISBN1FindsBookWithTitleBook1Title(){
+            string isbn = "ISBN1";
+            IBooksModel model = ApplicationContext.Model;
+            var book = model.FindByIsbn(isbn);
+            Assert.AreEqual("Book1Title", book.Title);
+        }
+        [Test]
+        public void FindBookByIsbnISBN42FindsNoBook(){
+            string isbn = "ISBN42";
+            IBooksModel model = ApplicationContext.Model;
+            Assert.Throws<System.Collections.Generic.KeyNotFoundException>(() => model.FindByIsbn(isbn));
         }
 
     }

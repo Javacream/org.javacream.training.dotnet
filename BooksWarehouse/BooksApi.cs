@@ -23,5 +23,9 @@ namespace Javacream.BooksWarehouse.Api{
         void DeleteByIsbn(string isbn);
         List<Book> FindAll();
         void Update(Book book);
+        List<string> FindAllIsbns();
+        List<Book> FindByTitle(string title);
+        List<Book> FindByPricerange(double min, double max);
+
     }
 }

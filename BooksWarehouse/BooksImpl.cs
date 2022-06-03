@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Javacream.BooksWarehouse.Impl{
 
     public class DictionaryBooksModel: IBooksModel{
-        private Dictionary<string, Book> _books = new Dictionary<string, Book>();
+        public Dictionary<string, Book> _books {get; set;}
         private int counter = 0;
        public string Create(string title){
            string isbn = "Isbn:" + counter++;
@@ -23,6 +23,18 @@ namespace Javacream.BooksWarehouse.Impl{
        public  void Update(Book book){
            _books.Add(book.Isbn, book);
        }
+
+        public List<string> FindAllIsbns(){
+            return FindAll().ConvertAll(book => book.Isbn);
+        }
+        public List<Book> FindByTitle(string title){
+            return FindAll().FindAll(book => book.Title.Contains(title));
+        }
+        public List<Book> FindByPricerange(double min, double max){
+            return FindAll().FindAll(book => book.Price > min && book.Price < max);
+        }
+
+
  
     }
 
