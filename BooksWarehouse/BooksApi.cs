@@ -25,7 +25,7 @@ namespace Javacream.BooksWarehouse.Api{
         void Update(Book book);
         List<string> FindAllIsbns();
         List<Book> FindByTitle(string title);
-        List<Book> FindByPricerange(double min, double max);
+        List<Book> FindByPriceRange(double min, double max);
 
     }
 }
