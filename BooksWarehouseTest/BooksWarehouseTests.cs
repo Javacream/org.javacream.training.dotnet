@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Javacream.BooksWarehouse;
+using Javacream.BooksWarehouse.Api;
 using System;
 
 namespace Javacream.BooksWarehouse.Test

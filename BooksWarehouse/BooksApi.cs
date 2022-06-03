@@ -1,4 +1,6 @@
-namespace Javacream.BooksWarehouse{
+using System.Collections.Generic;
+
+namespace Javacream.BooksWarehouse.Api{
     public class Book{
 
         public string Isbn {get;}
@@ -15,5 +17,11 @@ namespace Javacream.BooksWarehouse{
             Available = available;
          }
     }
-
+    public interface IBooksModel{
+        string Create(string title);
+        Book FindByIsbn(string isbn);
+        void DeleteByIsbn(string isbn);
+        List<Book> FindAll();
+        void Update(Book book);
+    }
 }
