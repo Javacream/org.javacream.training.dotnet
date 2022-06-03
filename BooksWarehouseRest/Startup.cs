@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using Javacream.BooksWarehouse;
 namespace BooksWarehouse.Rest
 {
     public class Startup
@@ -32,6 +33,7 @@ namespace BooksWarehouse.Rest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BooksWarehouse.Rest", Version = "v1" });
             });
+            services.AddSingleton<IBooksModel>(ApplicationContext.Model);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
