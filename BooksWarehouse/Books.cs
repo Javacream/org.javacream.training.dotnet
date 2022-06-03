@@ -16,21 +16,4 @@ namespace Javacream.BooksWarehouse{
          }
     }
 
-    public struct BookStruct{
-
-        public string Isbn {get;}
-        public string Title {get;}
-        public int Pages {get;set;}
-        public double Price {get;set;}
-        public bool Available {get;set;}
-
-        public BookStruct(string isbn, string title, int pages, double price, bool available){
-            Isbn = isbn;
-            Title = title;
-            Pages = pages;
-            Price = price;
-            Available = available;
-         }
-    }
-
 }
