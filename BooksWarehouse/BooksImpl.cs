@@ -2,6 +2,7 @@ using Javacream.BooksWarehouse.Api;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System;
 
 namespace Javacream.BooksWarehouse.Impl{
 
@@ -47,7 +48,7 @@ namespace Javacream.BooksWarehouse.Impl{
         private DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
 
 
-        private int counter = 0;
+        private Random random = new Random();
 
         public SqlBooksModel()
         {
@@ -55,14 +56,14 @@ namespace Javacream.BooksWarehouse.Impl{
 
         public string Create(string title)
         {
-            string isbn = "ISBN-" + counter++;
+            string isbn = "ISBN-" + random.Next();
             using (var connection = sqlFactory.CreateConnection())
             {
                 connection.ConnectionString = connectionString;
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
-                command.CommandText = "insert into books (isbn, title, pages, price) values (@isbn, @title, 0, 0.0)";
+                command.CommandText = "insert into books (isbn, title, pages, price, available) values (@isbn, @title, 0, 0.0, 0)";
                 command.Parameters.Add(new SqlParameter("@isbn", isbn));
                 command.Parameters.Add(new SqlParameter("@title", title));
                 command.ExecuteNonQuery();
@@ -167,11 +168,12 @@ namespace Javacream.BooksWarehouse.Impl{
                 connection.Open();
                 DbCommand command = sqlFactory.CreateCommand();
                 command.Connection = connection;
-                command.CommandText = "update books set title=@title, pages=@pages, price=@price where isbn = @isbn";
+                command.CommandText = "update books set title=@title, pages=@pages, price=@price, available=@available where isbn = @isbn";
                 command.Parameters.Add(new SqlParameter("@isbn", book.Isbn));
                 command.Parameters.Add(new SqlParameter("@title", book.Title));
                 command.Parameters.Add(new SqlParameter("@pages", book.Pages));
                 command.Parameters.Add(new SqlParameter("@price", book.Price));
+                command.Parameters.Add(new SqlParameter("@available", book.Available));
                 command.ExecuteNonQuery();
             }
 
