@@ -41,13 +41,13 @@ namespace Javacream.BooksWarehouse.Impl{
  
     }
 
-    public class SqlBooksModel : BooksModel
+    public class SqlBooksModel : IBooksModel
     {
         private readonly string connectionString = "Data Source=h2908727.stratoserver.net;Initial Catalog=publishing;User ID=sa;Password=javacream123!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private DbProviderFactory sqlFactory = System.Data.SqlClient.SqlClientFactory.Instance;
 
 
-        private Random random = new Random();
+        private int counter = 0;
 
         public SqlBooksModel()
         {
@@ -55,7 +55,7 @@ namespace Javacream.BooksWarehouse.Impl{
 
         public string Create(string title)
         {
-            string isbn = "ISBN" + random.Next();
+            string isbn = "ISBN-" + counter++;
             using (var connection = sqlFactory.CreateConnection())
             {
                 connection.ConnectionString = connectionString;
@@ -102,7 +102,7 @@ namespace Javacream.BooksWarehouse.Impl{
                 return result;
             }
         }
-        public Book FindByTitle(string title)
+        public List<Book> FindByTitle(string title)
         {
             using (var connection = sqlFactory.CreateConnection())
             {
@@ -113,8 +113,12 @@ namespace Javacream.BooksWarehouse.Impl{
                 command.CommandText = "select * from books where title = @title";
                 command.Parameters.Add(new SqlParameter("@title", title));
                 var reader = command.ExecuteReader();
-                reader.Read();
-                return new Book((string)reader["isbn"], (string)reader["title"], (int)reader["pages"], (double)reader["price"], false);
+                List<Book> result = new List<Book>();
+                while (reader.Read())
+                {
+                    result.Add(new Book((string)reader["isbn"], (string)reader["title"], (int)reader["pages"], (double)reader["price"],  false));
+                }
+                return result;
             }
         }
         public List<Book> FindByPriceRange(double min, double max)
