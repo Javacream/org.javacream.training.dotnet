@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Javacream.BooksWarehouse.Api;
+using Javacream.BooksWarehouse;
 using System;
 
 namespace Javacream.BooksWarehouse.Test
@@ -11,5 +12,14 @@ namespace Javacream.BooksWarehouse.Test
             Book b1 = new Book("ISBN1", "Title1", 100, 19.99, true);
             Assert.AreEqual("ISBN1", b1.Isbn);
         }
+
+        [Test]
+        public void BooksModelWorks(){
+            IBooksModel model = ApplicationContext.Model;
+            string generatedIsbn = model.Create("TEST");
+            Book searchResult = model.FindByIsbn(generatedIsbn);
+            //...
+        }
+
     }
 }
