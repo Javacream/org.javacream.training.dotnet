@@ -21,7 +21,7 @@ namespace Javacream.BooksWarehouse.Impl{
            return new List<Book>(_books.Values);
        }
        public  void Update(Book book){
-           _books.Add(book.Isbn, book);
+           _books[book.Isbn]= book;
        }
 
         public List<string> FindAllIsbns(){
